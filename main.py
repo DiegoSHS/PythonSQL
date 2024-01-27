@@ -18,3 +18,8 @@ def selectAll(conection:Connection,table:str):
 def close(cursor):
     cursor.commit()
     cursor.close()
+    
+def insertMany(conection:Connection,itemsList):
+    cursor = conection.cursor()
+    for item in itemsList:
+        cursor.intert(**item)
